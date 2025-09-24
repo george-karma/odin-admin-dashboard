@@ -1,0 +1,45 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+
+:root{
+    --background-color:#e0e8ef;
+    --nav-color:#0095d0;
+    --hilight-color:#f7ab33;
+}
+.container{
+    display: grid;
+    grid-template-areas: 
+    "sidebar-nav header header"
+    "sidebar-nav content sidebar-updates";
+}
+
+.header{
+    grid-area: header;
+
+}
+.sidebar.nav{
+    grid-area: sidebar-nav;
+        background-color: var(--nav-color);
+}
+
+.sidebar.updates{
+    grid-area: sidebar-updates;
+        background-color: var(--background-color);
+}
+
+.content{
+    grid-area: content;
+    background-color: var(--background-color);
+}
+
+.announcements,
+ .trending-users{
+    background-color: white;
+    border-radius: 5%;
+    padding: 2rem;
+    margin: 1rem;
+    box-shadow: 5px 5px 6px 2px #C8CED5;
+}
