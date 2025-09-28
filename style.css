@@ -1,45 +1,90 @@
 body,
-html {
-  height: 100%;
-  margin: 0;
+html,
+.container {
+    height: 100%;
+    margin: 0;
 }
 
-:root{
-    --background-color:#e0e8ef;
-    --nav-color:#0095d0;
-    --hilight-color:#f7ab33;
+:root {
+    --background-color: #e0e8ef;
+    --nav-color: #0095d0;
+    --hilight-color: #f7ab33;
 }
-.container{
+
+.container {
     display: grid;
-    grid-template-areas: 
-    "sidebar-nav header header"
-    "sidebar-nav content sidebar-updates";
+    grid-template: 0.5fr 3fr/ 0.65fr 4fr 1fr;
+    grid-template-areas:
+        "sidebar-nav header header"
+        "sidebar-nav content sidebar-updates";
 }
 
-.header{
+.header {
     grid-area: header;
-
 }
-.sidebar.nav{
+.header>.search{
+    display: flex;
+}
+
+.header>.profile{
+    display: flex;
+}
+
+.sidebar.nav {
+    color: white;
+    fill: white;
     grid-area: sidebar-nav;
-        background-color: var(--nav-color);
+    background-color: var(--nav-color);
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.dashboard.actions>li,
+.dashboard.settings>li,
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-left: 1rem;
 }
 
-.sidebar.updates{
+.icon>svg{
+    height: 3rem;
+}
+
+.sidebar svg{
+    color: white;
+}
+
+.sidebar.updates {
     grid-area: sidebar-updates;
-        background-color: var(--background-color);
+    background-color: var(--background-color);
 }
 
-.content{
+.content {
     grid-area: content;
     background-color: var(--background-color);
 }
 
 .announcements,
- .trending-users{
+.trending-users {
     background-color: white;
     border-radius: 5%;
     padding: 2rem;
     margin: 1rem;
     box-shadow: 5px 5px 6px 2px #C8CED5;
+}
+
+ul {
+    list-style: none;
+    padding: 0%;
+}
+
+
+
+
+svg{
+    height: 2rem;
 }
